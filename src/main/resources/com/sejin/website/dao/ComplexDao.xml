@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="spms.dao.MemberDao">
+  <resultMap type="complexDto" id="complexResultMap">
+    <id column="CNO" property="no"/>
+    <result column="ADDRESS"    property="adress"/>
+    <result column="BLOCK_TOTAL"    property="blockTotal"/>
+    <result column="DOOR_TOTAL"      property="doorTotal"/>
+    <result column="PARK_TOTAL"      property="parkTotal"/>
+    <result column="HIGHEST_TIER"      property="highestTier"/>
+    <result column="LOWEST_TIER"      property="lowestTier"/>
+    <result column="HEAT_SYSTEM"      property="heatSystem"/>
+    <result column="HEAT_FUEL"      property="heatFuel"/>
+    <result column="FLOOR_AREA_RATION"      property="floorAreaRation"/>
+    <result column="COMPANY_NAME"      property="companyName"/>
+    
+    <result column="MOVE_DATE" property="moveDate" javaType="java.sql.Date"/>
+    <result column="COMPLETE_DATE" property="completeDate" javaType="java.sql.Date"/>
+  </resultMap>
+  
+  
+  <select id="selectList" resultMap="complexResultMap">
+    select CNO, ADDRESS, BLOCK_TOTAL, DOOR_TOTAL
+    from COMPLEXES
+    order by CNO desc
+  </select>
+  
+</mapper>

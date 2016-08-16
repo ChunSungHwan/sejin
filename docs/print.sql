@@ -16,15 +16,8 @@ CREATE TABLE `COMPLEXES` (
 )
 COMMENT '아파트단지';
 
--- 아파트단지
-ALTER TABLE `COMPLEXES`
-  ADD CONSTRAINT `PK_COMPLEXES` -- 아파트단지 기본키
-    PRIMARY KEY (
-      `CNO` -- 아파트단지번호
-    );
 
-ALTER TABLE `COMPLEXES`
-  MODIFY COLUMN `CNO` INTEGER NOT NULL AUTO_INCREMENT COMMENT '아파트단지번호';
+
 
 -- 아파트
 CREATE TABLE `APARTMENTS` (
@@ -60,16 +53,6 @@ CREATE TABLE `APARTMENTS` (
 )
 COMMENT '아파트';
 
--- 아파트
-ALTER TABLE `APARTMENTS`
-  ADD CONSTRAINT `PK_APARTMENTS` -- 아파트 기본키
-    PRIMARY KEY (
-      `ANO`, -- 아파트번호
-      `CNO`  -- 아파트단지번호
-    );
-
-ALTER TABLE `APARTMENTS`
-  MODIFY COLUMN `ANO` INTEGER NOT NULL AUTO_INCREMENT COMMENT '아파트번호';
 
 -- 사진
 CREATE TABLE `PHOTOS` (
@@ -79,37 +62,3 @@ CREATE TABLE `PHOTOS` (
   `PHOTO_PATH` VARCHAR(255) NOT NULL COMMENT '경로' -- 경로
 )
 COMMENT '사진';
-
--- 사진
-ALTER TABLE `PHOTOS`
-  ADD CONSTRAINT `PK_PHOTOS` -- 사진 기본키
-    PRIMARY KEY (
-      `PNO`, -- 사진번호
-      `ANO`, -- 아파트번호
-      `CNO`  -- 아파트단지번호
-    );
-
-ALTER TABLE `PHOTOS`
-  MODIFY COLUMN `PNO` INTEGER NOT NULL AUTO_INCREMENT COMMENT '사진번호';
-
--- 아파트
-ALTER TABLE `APARTMENTS`
-  ADD CONSTRAINT `FK_COMPLEXES_TO_APARTMENTS` -- 아파트단지 -> 아파트
-    FOREIGN KEY (
-      `CNO` -- 아파트단지번호
-    )
-    REFERENCES `COMPLEXES` ( -- 아파트단지
-      `CNO` -- 아파트단지번호
-    );
-
--- 사진
-ALTER TABLE `PHOTOS`
-  ADD CONSTRAINT `FK_APARTMENTS_TO_PHOTOS` -- 아파트 -> 사진
-    FOREIGN KEY (
-      `ANO`, -- 아파트번호
-      `CNO`  -- 아파트단지번호
-    )
-    REFERENCES `APARTMENTS` ( -- 아파트
-      `ANO`, -- 아파트번호
-      `CNO`  -- 아파트단지번호
-    );
