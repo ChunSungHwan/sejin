@@ -1,10 +1,12 @@
 package com.sejin.website.dto;
 
-import java.sql.Date;
+import java.util.List;
+
 
 
 public class ComplexDto {
 	protected int 				no;
+	protected String			name;
 	protected String  		adress;
 	protected int					blockTotal;
 	protected int					doorTotal;
@@ -13,16 +15,19 @@ public class ComplexDto {
 	protected int					lowestTier;
 	protected String			heatSystem;
 	protected String			heatFuel;
-	protected int					floorAreaRation;
+	protected String			floorAreaRation;
 	protected String			companyName;
-	protected Date				moveDate;
-	protected Date				completeDate;
+	protected String			moveDate;
+	protected String			completeDate;
 	
-	
+	protected List<ApartmentDto> apartments;
+
+/*
 	public ComplexDto() {}
 	
 	public ComplexDto(
 			int no,
+			String name,
 			String adress,
 			int blockTotal,
 			int doorTotal,
@@ -31,12 +36,13 @@ public class ComplexDto {
 			int lowestTier,
 			String heatSystem,
 			String heatFual,
-			int floorAreaRaction,
+			String floorAreaRaction,
 			String companyName,
-			Date moveDate, 
-			Date completeDate
+			String moveDate, 
+			String completeDate
 			) {
 		this.no = no;
+		this.name = name;
 		this.adress = adress;
 		this.blockTotal = blockTotal;
 		this.doorTotal = doorTotal;
@@ -51,12 +57,23 @@ public class ComplexDto {
 		this.completeDate = completeDate;
 	}
 
+*/	
+	
 	public int getNo() {
 		return no;
 	}
 
 	public void setNo(int no) {
 		this.no = no;
+	}
+	
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getAdress() {
@@ -123,11 +140,11 @@ public class ComplexDto {
 		this.heatFuel = heatFuel;
 	}
 
-	public int getFloorAreaRation() {
+	public String getFloorAreaRation() {
 		return floorAreaRation;
 	}
 
-	public void setFloorAreaRation(int floorAreaRation) {
+	public void setFloorAreaRation(String floorAreaRation) {
 		this.floorAreaRation = floorAreaRation;
 	}
 
@@ -139,19 +156,27 @@ public class ComplexDto {
 		this.companyName = companyName;
 	}
 
-	public Date getMoveDate() {
+	public String getMoveDate() {
 		return moveDate;
 	}
 
-	public void setMoveDate(Date moveDate) {
+	public void setMoveDate(String moveDate) {
 		this.moveDate = moveDate;
 	}
 
-	public Date getCompleteDate() {
+	public String getCompleteDate() {
 		return completeDate;
 	}
 
-	public void setCompleteDate(Date completeDate) {
+	public void setCompleteDate(String completeDate) {
 		this.completeDate = completeDate;
+	}
+	
+	public List<ApartmentDto> getApartments() {
+		return apartments;
+	}
+
+	public void setApartments(List<ApartmentDto> apartments) {
+		this.apartments = apartments;
 	}
 }

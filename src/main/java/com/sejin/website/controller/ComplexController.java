@@ -9,7 +9,6 @@ import com.sejin.website.service.ComplexListService;
 
 @Controller
 public class ComplexController {
-	//Service service;
 	@Autowired
 	ComplexListService service;
 	
@@ -17,12 +16,10 @@ public class ComplexController {
 	  this.service = service;
   }
 	
-	@RequestMapping("/list")
+	@RequestMapping("/complex/list")
 	public String list(Model model) {
-		System.out.println("list()");
 		service.execute(model);
-		
-		return "list";
+		return "complex/list";
 	}
 	
 }

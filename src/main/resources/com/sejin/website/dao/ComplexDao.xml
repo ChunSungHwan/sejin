@@ -5,6 +5,7 @@
 <mapper namespace="com.sejin.website.dao.ComplexDao">
   <resultMap type="complexDto" id="complexResultMap">
     <id column="CNO" property="no"/>
+    <result column="CNAME"              property="name"/>
     <result column="ADDRESS"            property="adress"/>
     <result column="BLOCK_TOTAL"        property="blockTotal"/>
     <result column="DOOR_TOTAL"         property="doorTotal"/>
@@ -15,8 +16,8 @@
     <result column="HEAT_FUEL"          property="heatFuel"/>
     <result column="FLOOR_AREA_RATION"  property="floorAreaRation"/>
     <result column="COMPANY_NAME"       property="companyName"/>
-    <result column="MOVE_DATE"      property="moveDate"     javaType="java.sql.Date"/>
-    <result column="COMPLETE_DATE"  property="completeDate" javaType="java.sql.Date"/>
+    <result column="MOVE_DATE"          property="moveDate"     />
+    <result column="COMPLETE_DATE"      property="completeDate" />
   </resultMap>
   
   
