@@ -28,7 +28,6 @@
 </style>
 
 
-
 </head>
 
 <body>
@@ -59,61 +58,22 @@
             };
          
        var map = new daum.maps.Map(container, options);
+       
+       
+       var mapOverays = ${mapOverays};
+       for(var i = 0; i < mapOverays.length; i++) {
+    	   var customOverlay = new daum.maps.CustomOverlay({
+    		      position: new daum.maps.LatLng(mapOverays[i].latitude, mapOverays[i].longitude),
+    		      content: "<div class='customOverlay'><a href='" + mapOverays[i].no + "'>" + mapOverays[i].name + "</a></div>"  
+    		 });
+    	   customOverlay.setMap(map);
+       }
+       
     });
     
-/*     
-    complexLength = ${complex.length};
-    for(var i = 0; i < complexLength; i++) {
-    	contents.push("<div class='customOverlay'><a href='http://192.168.0.43:9999/website/home/list.do'>${complex[i].name}</a></div>");
-    	positions.push(new daum.maps.LatLng(37.499554, 127.048307));
-    }
-    
- */    
-    
- // 커스텀 오버레이에 표시할 내용입니다     
- // HTML 문자열 또는 Dom Element 입니다
- /* var content = "<div class='customOverlay'><a href='http://192.168.0.43:9999/website/home/list.do'>SK뷰</a></div>"; */
-
- // 커스텀 오버레이가 표시될 위치입니다 
-/*  var position = new daum.maps.LatLng(37.499554, 127.048307); */  
-
-/* var content = [
-               "<div class='customOverlay'><a href='http://192.168.0.43:9999/website/home/list.do'>SK뷰</a></div>",
-               "<div class='customOverlay'><a href='http://192.168.0.43:9999/website/home/list.do'>펜타빌</a></div>"
-               ];
-
-var position = [
-                new daum.maps.LatLng(37.499554, 127.048307),
-                new daum.maps.LatLng(37.500669, 127.047566)
-                ]; */
-
- // 커스텀 오버레이를 생성합니다
- /*
- var customOverlay = new daum.maps.CustomOverlay({
-     position: position,
-     content: content   
- });
-*/
-/* 
-for(var i = 0; i < content.length; i++) {
-	var customOverlay = new daum.maps.CustomOverlay({
-	    position: position[i],
-	    content: content[i]   
-	});
-	customOverlay.setMap(map);
-}
-
- */
-// 커스텀 오버레이를 지도에 표시합니다
-/* customOverlay.setMap(map); */
- 
     
 </script>
 <hr>
-
-
-
-
 
 
 
@@ -149,15 +109,11 @@ for(var i = 0; i < content.length; i++) {
 	    </div>
     
     </c:forEach>
-    
-    
       
     </div>
     
   </div>  
 </div>
-
-
 
 
 

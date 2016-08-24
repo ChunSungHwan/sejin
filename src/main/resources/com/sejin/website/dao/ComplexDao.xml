@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sejin.website.dao.ComplexDao">
+  <resultMap type="complexDto" id="complexResultMap">
+    <id column="CNO" property="cno"/>
+    <result column="CNAME"              property="name"/>
+    <result column="ADDRESS"            property="adress"/>
+    <result column="BLOCK_TOTAL"        property="blockTotal"/>
+    <result column="DOOR_TOTAL"         property="doorTotal"/>
+    <result column="PARK_TOTAL"         property="parkTotal"/>
+    <result column="HIGHEST_TIER"       property="highestTier"/>
+    <result column="LOWEST_TIER"        property="lowestTier"/>
+    <result column="HEAT_SYSTEM"        property="heatSystem"/>
+    <result column="HEAT_FUEL"          property="heatFuel"/>
+    <result column="FLOOR_AREA_RATION"  property="floorAreaRation"/>
+    <result column="COMPANY_NAME"       property="companyName"/>
+    <result column="MOVE_DATE"          property="moveDate"     />
+    <result column="COMPLETE_DATE"      property="completeDate" /> 
+    <result column="CLATITUDE"          property="clatitude" /> 
+    <result column="CLONGITUDE"         property="clongitude" /> 
+  </resultMap>
+  
+  
+  <select id="selectList" resultMap="complexResultMap">
+    select CNO, CNAME, ADDRESS, 
+           BLOCK_TOTAL, DOOR_TOTAL, PARK_TOTAL, 
+           HIGHEST_TIER, LOWEST_TIER, 
+           HEAT_SYSTEM, HEAT_FUEL, 
+           FLOOR_AREA_RATION, COMPANY_NAME, 
+           MOVE_DATE, COMPLETE_DATE, CLATITUDE, CLONGITUDE
+    from COMPLEXES
+  </select>
+  
+  
+  <select id="selectNamePointList" resultMap="complexResultMap">
+    select CNO, CNAME, CLATITUDE, CLONGITUDE
+    from COMPLEXES
+  </select>
+  
+</mapper>

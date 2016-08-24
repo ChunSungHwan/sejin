@@ -16,14 +16,13 @@ public class HomeController {
 	HomeControllerService homeControllerService;
 	
 	
-	@RequestMapping("/home/list.do")
+  @RequestMapping("/home/list.do")
 	public String listAll(HttpServletRequest request, Model model) {
 		
 		String param = request.getParameter("buyType");
 		if(param != null) {
 			model.addAttribute("buyType", param);
 		}
-		
 		
 		homeControllerService.execute(model);
 		return "home/list";
