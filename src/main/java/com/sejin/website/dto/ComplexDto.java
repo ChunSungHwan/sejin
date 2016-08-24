@@ -18,6 +18,9 @@ public class ComplexDto {
 	protected String			moveDate;
 	protected String			completeDate;
 	
+	protected String 			clatitude;
+	protected String 			clongitude;
+	
 	protected List<ApartmentDto> apartments;
 
 	public int getCno() {
@@ -139,4 +142,21 @@ public class ComplexDto {
 	public void setApartments(List<ApartmentDto> apartments) {
 		this.apartments = apartments;
 	}
+
+	public String getClatitude() {
+		return clatitude;
+	}
+
+	public void setClatitude(String clatitude) {
+		this.clatitude = clatitude;
+	}
+
+	public String getClongitude() {
+		return clongitude;
+	}
+
+	public void setClongitude(String clongitude) {
+		this.clongitude = clongitude;
+	}
+	
 }

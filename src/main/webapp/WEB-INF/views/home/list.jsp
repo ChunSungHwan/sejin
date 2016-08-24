@@ -10,6 +10,24 @@
 <script src="http://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
 <script src="<%=cp%>/resources/bootstrap/js/bootstrap.min.js"></script>
 <title>세진공인중개부동산</title>
+<!-- 
+
+<style>
+.label {margin-bottom: 96px;}
+.label * {display: inline-block;vertical-align: top;}
+.label .left {background: url("http://i1.daumcdn.net/localimg/localimages/07/2011/map/storeview/tip_l.png") no-repeat;display: inline-block;height: 24px;overflow: hidden;vertical-align: top;width: 7px;}
+.label .center {background: url(http://i1.daumcdn.net/localimg/localimages/07/2011/map/storeview/tip_bg.png) repeat-x;display: inline-block;height: 24px;font-size: 12px;line-height: 24px;}
+.label .right {background: url("http://i1.daumcdn.net/localimg/localimages/07/2011/map/storeview/tip_r.png") -1px 0  no-repeat;display: inline-block;height: 24px;overflow: hidden;width: 6px;}
+</style>
+
+
+ -->
+
+<style type="text/css">
+.customOverlay {background-color: #F8646E; border-radius:5px;}
+</style>
+
+
 
 </head>
 
@@ -31,17 +49,74 @@
 <div class="container-fluid" id="map" style="height: 600px;"></div>
 <script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=ef077656f7ea38553b7e918751a598e6"></script>
 <script> 
-     var container = document.getElementById('map');
-     var options = {
-         center: new daum.maps.LatLng(37.499554, 127.048307),
-         level: 4,
-         draggable: false,
-         disableDoubleClickZoom: true
-         };
-      
-    var map = new daum.maps.Map(container, options);
+    $(document).ready(function() {
+    	var container = document.getElementById('map');
+        var options = {
+            center: new daum.maps.LatLng(37.499554, 127.048307),
+            level: 4,
+            draggable: false,
+            disableDoubleClickZoom: true
+            };
+         
+       var map = new daum.maps.Map(container, options);
+    });
+    
+/*     
+    complexLength = ${complex.length};
+    for(var i = 0; i < complexLength; i++) {
+    	contents.push("<div class='customOverlay'><a href='http://192.168.0.43:9999/website/home/list.do'>${complex[i].name}</a></div>");
+    	positions.push(new daum.maps.LatLng(37.499554, 127.048307));
+    }
+    
+ */    
+    
+ // 커스텀 오버레이에 표시할 내용입니다     
+ // HTML 문자열 또는 Dom Element 입니다
+ /* var content = "<div class='customOverlay'><a href='http://192.168.0.43:9999/website/home/list.do'>SK뷰</a></div>"; */
+
+ // 커스텀 오버레이가 표시될 위치입니다 
+/*  var position = new daum.maps.LatLng(37.499554, 127.048307); */  
+
+/* var content = [
+               "<div class='customOverlay'><a href='http://192.168.0.43:9999/website/home/list.do'>SK뷰</a></div>",
+               "<div class='customOverlay'><a href='http://192.168.0.43:9999/website/home/list.do'>펜타빌</a></div>"
+               ];
+
+var position = [
+                new daum.maps.LatLng(37.499554, 127.048307),
+                new daum.maps.LatLng(37.500669, 127.047566)
+                ]; */
+
+ // 커스텀 오버레이를 생성합니다
+ /*
+ var customOverlay = new daum.maps.CustomOverlay({
+     position: position,
+     content: content   
+ });
+*/
+/* 
+for(var i = 0; i < content.length; i++) {
+	var customOverlay = new daum.maps.CustomOverlay({
+	    position: position[i],
+	    content: content[i]   
+	});
+	customOverlay.setMap(map);
+}
+
+ */
+// 커스텀 오버레이를 지도에 표시합니다
+/* customOverlay.setMap(map); */
+ 
+    
 </script>
 <hr>
+
+
+
+
+
+
+
 
 <div class="container-fluid">
   <div class="row">

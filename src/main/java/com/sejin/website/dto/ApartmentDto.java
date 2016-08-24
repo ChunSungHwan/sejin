@@ -35,6 +35,10 @@ public class ApartmentDto {
 	protected boolean entrance;
 	protected boolean shoeRack;
 	
+	protected String alatitude;
+	protected String alongitude;
+	
+	
 	protected int cno;
 	protected List<PhotoDto> photos;
 
@@ -293,6 +297,22 @@ public class ApartmentDto {
 
 	public void setPhotos(List<PhotoDto> photos) {
 		this.photos = photos;
+	}
+
+	public String getAlatitude() {
+		return alatitude;
+	}
+
+	public void setAlatitude(String alatitude) {
+		this.alatitude = alatitude;
+	}
+
+	public String getAlongitude() {
+		return alongitude;
+	}
+
+	public void setAlongitude(String alongitude) {
+		this.alongitude = alongitude;
 	}
 	
 }

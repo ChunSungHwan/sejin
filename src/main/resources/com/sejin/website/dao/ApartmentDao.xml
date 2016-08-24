@@ -35,6 +35,8 @@
 	  <result column="KITCHEN"          property="kitchen"/>
 	  <result column="ENTRANCE"         property="entrance"/>
 	  <result column="SHOE_RACK"        property="shoeRack"/>
+	  <result column="ALATITUDE"        property="alatitude"/>
+	  <result column="ALONGITUDE"        property="alongitude"/>
   </resultMap>
 
   <select id="selectList" resultMap="apartmentResultMap">
@@ -46,7 +48,7 @@
            ROOM_NUMBER, BATH_NUMBER, LIVING_NUMBER, 
            CREATE_DATE, MODIFY_DATE, 
            BALCONY, WALLPAPER, BATHROOM, CEILING, FLOOR, 
-           KITCHEN, ENTRANCE, SHOE_RACK 
+           KITCHEN, ENTRANCE, SHOE_RACK, ALATITUDE, ALONGITUDE 
     from APARTMENTS
     order by MODIFY_DATE desc
   </select>
@@ -61,7 +63,7 @@
            ROOM_NUMBER, BATH_NUMBER, LIVING_NUMBER, 
            CREATE_DATE, MODIFY_DATE, 
            BALCONY, WALLPAPER, BATHROOM, CEILING, FLOOR, 
-           KITCHEN, ENTRANCE, SHOE_RACK 
+           KITCHEN, ENTRANCE, SHOE_RACK, ALATITUDE, ALONGITUDE 
     from APARTMENTS
     where BUY_TYPE = #{string}
     order by MODIFY_DATE desc

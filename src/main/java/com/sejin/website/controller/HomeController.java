@@ -24,8 +24,8 @@ public class HomeController {
 			model.addAttribute("buyType", param);
 		}
 		
-		homeControllerService.execute(model);
 		
+		homeControllerService.execute(model);
 		return "home/list";
 	}
 }
