@@ -2,10 +2,8 @@ package com.sejin.website.dto;
 
 import java.util.List;
 
-
-
 public class ComplexDto {
-	protected int 				no;
+	protected int 				cno;
 	protected String			name;
 	protected String  		adress;
 	protected int					blockTotal;
@@ -22,51 +20,13 @@ public class ComplexDto {
 	
 	protected List<ApartmentDto> apartments;
 
-/*
-	public ComplexDto() {}
-	
-	public ComplexDto(
-			int no,
-			String name,
-			String adress,
-			int blockTotal,
-			int doorTotal,
-			int parkTotal,
-			int highestTier,
-			int lowestTier,
-			String heatSystem,
-			String heatFual,
-			String floorAreaRaction,
-			String companyName,
-			String moveDate, 
-			String completeDate
-			) {
-		this.no = no;
-		this.name = name;
-		this.adress = adress;
-		this.blockTotal = blockTotal;
-		this.doorTotal = doorTotal;
-		this.parkTotal = parkTotal;
-		this.highestTier = highestTier;
-		this.lowestTier = lowestTier;
-		this.heatSystem = heatSystem;
-		this.heatFuel = heatFual;
-		this.floorAreaRation = floorAreaRaction;
-		this.companyName = companyName;
-		this.moveDate = moveDate;
-		this.completeDate = completeDate;
+	public int getCno() {
+		return cno;
 	}
 
-*/	
-	
-	public int getNo() {
-		return no;
+	public void setCno(int cno) {
+		this.cno = cno;
 	}
-
-	public void setNo(int no) {
-		this.no = no;
-	}
-	
 
 	public String getName() {
 		return name;

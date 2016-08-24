@@ -9,8 +9,9 @@ import org.springframework.stereotype.Repository;
 
 import com.sejin.website.dto.ComplexDto;
 
+
 @Repository
-public class ComplexDaoImpl implements ComplexDao {
+public class ComplexAptPhtoDaoImpl implements ComplexAptPhotoDao{
 	@Autowired
 	SqlSessionFactory sqlSessionFactory;
 	
@@ -22,12 +23,10 @@ public class ComplexDaoImpl implements ComplexDao {
   public List<ComplexDto> selectList() throws Exception {
 		SqlSession sqlSession = sqlSessionFactory.openSession();
 		try {
-			return sqlSession.selectList("com.sejin.website.dao.ComplexDao.selectList");
+			return sqlSession.selectList("com.sejin.website.dao.ComplexAptPhotoDao.selectList");
 		} finally {
 			sqlSession.close();
 		}
   }
 
 }
-
-

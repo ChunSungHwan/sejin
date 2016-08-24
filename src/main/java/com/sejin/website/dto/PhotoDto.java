@@ -1,17 +1,16 @@
 package com.sejin.website.dto;
 
 public class PhotoDto {
-	protected int no;
+	protected int pno;
 	protected String photoPath;
 	protected int cno;
 	protected int ano;
 	
-	
-	public int getNo() {
-		return no;
+	public int getPno() {
+		return pno;
 	}
-	public void setNo(int no) {
-		this.no = no;
+	public void setPno(int pno) {
+		this.pno = pno;
 	}
 	public String getPhotoPath() {
 		return photoPath;

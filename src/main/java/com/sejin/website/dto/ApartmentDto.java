@@ -4,7 +4,8 @@ import java.sql.Date;
 import java.util.List;
 
 public class ApartmentDto {
-	protected int no;
+	protected int ano;
+	protected String aname;
 	protected String title;
 	protected String content;
 	protected String buyType;
@@ -36,79 +37,22 @@ public class ApartmentDto {
 	
 	protected int cno;
 	protected List<PhotoDto> photos;
-	
 
-	/*	
-	public ApartmentDto() {}
-	
-	public ApartmentDto(
-			int no, 
-			String title,
-			String content,
-			String buyType,
-			int salePrice,
-			int rentDeposit,
-			int mRentDeposit,
-			int mRentPrice,
-			String supplyArea,
-			String exclusiveArea,
-			int	block,
-			int tierTotal,
-			int tier,
-			String direction,
-			String expectDate,
-			String entranceStruct,
-			int roomNumber,
-			int bathNumber,
-			int livingNumber,
-			Date createDate,
-			Date modifyDate,
-			boolean balcony,
-			boolean wallpaper,
-			boolean bathRoom,
-			boolean ceiling,
-			boolean floor,
-			boolean kitchen,
-			boolean entrance,
-			boolean shoeRack
-			) {
-		this.no = no;
-		this.title = title;
-		this.content = content;
-		this.buyType = buyType;
-		this.salePrice = salePrice;
-		this.rentDeposit = rentDeposit;
-		this.mRentDeposit = mRentDeposit;
-		this.mRentPrice = mRentPrice;
-		this.supplyArea = supplyArea;
-		this.exclusiveArea = exclusiveArea;
-		this.block =block;
-		this.tierTotal = tierTotal;
-		this.tier = tier;
-		this.direction = direction;
-		this.expectDate = expectDate;
-		this.entranceStruct = entranceStruct;
-		this.roomNumber = roomNumber;
-		this.bathNumber = bathNumber;
-		this.livingNumber = livingNumber;
-		this.createDate = createDate;
-		this.modifyDate = modifyDate;
-		this.balcony = balcony;
-		this.wallpaper = wallpaper;
-		this.bathRoom = bathRoom;
-		this.ceiling = ceiling;
-		this.floor = floor;
-		this.kitchen = kitchen;
-		this.entrance = entrance;
-		this.shoeRack = shoeRack;
-	}
-*/
-	public int getNo() {
-		return no;
+	public int getAno() {
+		return ano;
 	}
 
-	public void setNo(int no) {
-		this.no = no;
+	public void setAno(int ano) {
+		this.ano = ano;
+	}
+	
+
+	public String getAname() {
+		return aname;
+	}
+
+	public void setAname(String aname) {
+		this.aname = aname;
 	}
 
 	public String getTitle() {

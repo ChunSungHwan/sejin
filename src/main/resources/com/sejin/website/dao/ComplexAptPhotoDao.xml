@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sejin.website.dao.ComplexAptPhotoDao">
+  <resultMap type="complexDto" id="complexAptPhotoResultMap">
+    <id column="CNO" property="cno"/>
+    <result column="CNAME"              property="name"/>
+    <result column="ADDRESS"            property="adress"/>
+    <result column="BLOCK_TOTAL"        property="blockTotal"/>
+    <result column="DOOR_TOTAL"         property="doorTotal"/>
+    <result column="PARK_TOTAL"         property="parkTotal"/>
+    <result column="HIGHEST_TIER"       property="highestTier"/>
+    <result column="LOWEST_TIER"        property="lowestTier"/>
+    <result column="HEAT_SYSTEM"        property="heatSystem"/>
+    <result column="HEAT_FUEL"          property="heatFuel"/>
+    <result column="FLOOR_AREA_RATION"  property="floorAreaRation"/>
+    <result column="COMPANY_NAME"       property="companyName"/>
+    <result column="MOVE_DATE"          property="moveDate"     />
+    <result column="COMPLETE_DATE"      property="completeDate" /> 
+    <collection property="apartments" column="CNO" javaType="java.util.ArrayList" ofType="ApartmentDto" select="getAptList">
+      <result column="ANO"              property="ano"/>
+      <result column="TITLE"            property="title"/>
+      <result column="CONTENT"          property="content"/>
+      <result column="BUY_TYPE"         property="buyType"/>
+      <result column="SALE_PRICE"       property="salePrice"/>
+      <result column="RENT_DEPOSIT"     property="rentDeposit"/>
+      <result column="MRENT_DEPOSIT"    property="mRentDeposit"/>
+      <result column="MRENT_PRICE"      property="mRentPrice"/>
+      <result column="SUPPLY_AREA"      property="supplyArea"/>
+      <result column="EXCLUSIVE_AREA"   property="exclusiveArea"/>
+      <result column="BLOCK"            property="block"/>
+      <result column="TIER_TOTAL"       property="tierTotal"/>
+      <result column="TIER"             property="tier"/>
+      <result column="DIRECTION"        property="direction"/>
+      <result column="EXPECT_DATE"      property="expectDate"/>
+      <result column="ENTRANCE_STRUCT"  property="entranceStruct"/>
+      <result column="ROOM_NUMBER"      property="roomNumber"/>
+      <result column="BATH_NUMBER"      property="bathNumber"/>
+      <result column="LIVING_NUMBER"    property="livingNumber"/>
+      <result column="CREATE_DATE"      property="createDate" javaType="java.sql.Date"/>
+      <result column="MODIFY_DATE"      property="modifyDate" javaType="java.sql.Date"/>
+      <result column="BALCONY"          property="balcony"/>
+      <result column="WALLPAPER"        property="wallpaper"/>
+      <result column="BATHROOM"         property="bathRoom"/>
+      <result column="CEILING"          property="ceiling"/>
+      <result column="FLOOR"            property="floor"/>
+      <result column="KITCHEN"          property="kitchen"/>
+      <result column="ENTRANCE"         property="entrance"/>
+      <result column="SHOE_RACK"        property="shoeRack"/>
+    </collection>
+  </resultMap>
+  
+  
+  <select id="selectList" resultMap="complexAptPhotoResultMap">
+    select CNO, CNAME, ADDRESS, 
+           BLOCK_TOTAL, DOOR_TOTAL, PARK_TOTAL, 
+           HIGHEST_TIER, LOWEST_TIER, 
+           HEAT_SYSTEM, HEAT_FUEL, 
+           FLOOR_AREA_RATION, COMPANY_NAME, 
+           MOVE_DATE, COMPLETE_DATE
+    from COMPLEXES
+  </select>
+  
+  <select id="getAptList" resultType="ApartmentDto">
+    select ANO, TITLE, CONTENT, 
+           BUY_TYPE, SALE_PRICE, RENT_DEPOSIT, MRENT_DEPOSIT, MRENT_PRICE, 
+           SUPPLY_AREA, EXCLUSIVE_AREA, 
+           BLOCK, TIER_TOTAL, TIER, DIRECTION, 
+           EXPECT_DATE, ENTRANCE_STRUCT, 
+           ROOM_NUMBER, BATH_NUMBER, LIVING_NUMBER, 
+           CREATE_DATE, MODIFY_DATE, 
+           BALCONY, WALLPAPER, BATHROOM, CEILING, FLOOR, 
+           KITCHEN, ENTRANCE, SHOE_RACK 
+    from APARTMENTS
+    where CNO = #{cno}
+  </select>
+  
+</mapper>
