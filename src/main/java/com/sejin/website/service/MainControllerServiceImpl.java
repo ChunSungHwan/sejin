@@ -1,5 +1,6 @@
 package com.sejin.website.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -11,10 +12,12 @@ import org.springframework.ui.Model;
 
 import com.sejin.website.dao.ApartmentDao;
 import com.sejin.website.dao.ComplexDao;
+import com.sejin.website.dto.ApartmentDto;
 import com.sejin.website.dto.ComplexDto;
+import com.sejin.website.dto.PhotoDto;
 
 @Service
-public class HomeControllerServiceImpl implements HomeControllerService {
+public class MainControllerServiceImpl implements MainControllerService {
 	@Autowired
 	ApartmentDao apartmentDao;
 	@Autowired
@@ -28,7 +31,19 @@ public class HomeControllerServiceImpl implements HomeControllerService {
 			if(map.get("buyType") != null) {
 				model.addAttribute("list", apartmentDao.selectListBuyType((String) map.get("buyType")));
 			} else {
-				model.addAttribute("list", apartmentDao.selectList());
+				List<ApartmentDto> list = apartmentDao.selectList();
+				List<PhotoDto> plist = apartmentDao.selectPhotoList();
+				
+				for(ApartmentDto a : list) {
+					a.setPhotos(new ArrayList<PhotoDto>());
+					for(PhotoDto p : plist) {
+						if(a.getAno() == p.getAno()) {
+							a.getPhotos().add(p);
+						}
+					}
+				}
+				
+				model.addAttribute("list", list);
 			}
 			
     } catch (Exception e) {

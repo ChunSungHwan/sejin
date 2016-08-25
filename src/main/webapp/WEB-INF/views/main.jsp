@@ -11,7 +11,6 @@
 <script src="<%=cp%>/resources/bootstrap/js/bootstrap.min.js"></script>
 <title>세진공인중개부동산</title>
 <!-- 
-
 <style>
 .label {margin-bottom: 96px;}
 .label * {display: inline-block;vertical-align: top;}
@@ -19,12 +18,11 @@
 .label .center {background: url(http://i1.daumcdn.net/localimg/localimages/07/2011/map/storeview/tip_bg.png) repeat-x;display: inline-block;height: 24px;font-size: 12px;line-height: 24px;}
 .label .right {background: url("http://i1.daumcdn.net/localimg/localimages/07/2011/map/storeview/tip_r.png") -1px 0  no-repeat;display: inline-block;height: 24px;overflow: hidden;width: 6px;}
 </style>
-
-
  -->
 
 <style type="text/css">
 .customOverlay {background-color: #F8646E; border-radius:5px;}
+
 </style>
 
 
@@ -37,13 +35,14 @@
       <a class="navbar-brand" href="#">세진부동산</a>
     </div>
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="http://192.168.0.43:9999/website/home/list.do">Home</a></li>
-      <li><a href="#">매물검색</a></li>
+      <li><a href="http://192.168.0.43:9999/website/main.do">Home</a></li>
+      <li><a href="http://192.168.0.43:9999/website/search/map.do">매물검색</a></li>
       <li><a href="#">부동산소개</a></li>
       <li><a href="#">즐겨찾기</a></li>
     </ul>
   </div>
 </nav>
+
 
 <div class="container-fluid" id="map" style="height: 600px;"></div>
 <script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=ef077656f7ea38553b7e918751a598e6"></script>
@@ -70,51 +69,46 @@
        }
        
     });
-    
-    
 </script>
+
+
 <hr>
-
-
 
 
 <div class="container-fluid">
   <div class="row">
     <div class="col-xs-2 col-xs-offset-5">
 	    <div class="btn-group" role="group" aria-label="...">
-	      <button type="button" class="btn btn-default" onclick="location.href='http://192.168.0.43:9999/website/home/list.do'">전체</button>
-	      <button type="button" class="btn btn-default" onclick="location.href='http://192.168.0.43:9999/website/home/list.do?buyType=매매'">매매</button>
-	      <button type="button" class="btn btn-default" onclick="location.href='http://192.168.0.43:9999/website/home/list.do?buyType=전세'">전세</button>
-	      <button type="button" class="btn btn-default" onclick="location.href='http://192.168.0.43:9999/website/home/list.do?buyType=월세'">월세</button>
+	      <button type="button" class="btn btn-default" onclick="location.href='http://192.168.0.43:9999/website/main.do'">전체</button>
+	      <button type="button" class="btn btn-default" onclick="location.href='http://192.168.0.43:9999/website/main.do?buyType=매매'">매매</button>
+	      <button type="button" class="btn btn-default" onclick="location.href='http://192.168.0.43:9999/website/main.do?buyType=전세'">전세</button>
+	      <button type="button" class="btn btn-default" onclick="location.href='http://192.168.0.43:9999/website/main.do?buyType=월세'">월세</button>
 	    </div>
     </div>
   </div>  
 </div>
 
+
 <hr>
+
 
 <div class="container-fluid">
   <div class="row">
     <div class="col-xs-8 col-xs-offset-2">
-    <c:forEach var="apartments" items="${list}">
-      
-	    <div class="col-xs-3" onclick="location.href='http://192.168.0.43:9999/website/home/list.do'">
-	      <div class="thumbnail">
-	        <img src="/imgFolder/noimg.gif" alt="...">
-	        <div class="caption">
-	          <h3>${apartments.aname }</h3>
-	          <p>${apartments.buyType }</p>
-	        </div>
-	      </div>
-	    </div>
-    
-    </c:forEach>
-      
+	    <c:forEach var="apartments" items="${list}">
+		    <div class="col-xs-3" onclick="location.href='http://192.168.0.43:9999/website/search/details.do?ano=${apartments.ano}&cno=${apartments.cno }'">
+		      <div class="thumbnail">
+		        <img src="http://192.168.0.43:9999${apartments.photos[0].photoPath}" alt="..." style="min-height:200px;height:200px;width: 300px">
+		        <div class="caption">
+		          <h3>${apartments.aname }</h3>
+		          <p>${apartments.buyType }</p>
+		        </div>
+		      </div>
+		    </div>
+	    </c:forEach>
     </div>
-    
   </div>  
 </div>
-
 
 
 </body>

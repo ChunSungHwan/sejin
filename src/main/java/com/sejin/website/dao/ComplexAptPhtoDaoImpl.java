@@ -7,6 +7,8 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.sejin.website.dto.ApartmentDto;
+import com.sejin.website.dto.ComplexApartmentPhotoDto;
 import com.sejin.website.dto.ComplexDto;
 
 
@@ -27,6 +29,17 @@ public class ComplexAptPhtoDaoImpl implements ComplexAptPhotoDao{
 		} finally {
 			sqlSession.close();
 		}
+  }
+
+	@Override
+  public ComplexApartmentPhotoDto selectOne(ApartmentDto aprtmentDto) throws Exception {
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		try {
+			return sqlSession.selectOne("com.sejin.website.dao.ComplexAptPhotoDao.selectOne", aprtmentDto);
+		} finally {
+			sqlSession.close();
+		}
+		
   }
 
 }

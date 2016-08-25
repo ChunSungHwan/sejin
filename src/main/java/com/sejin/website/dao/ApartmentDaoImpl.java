@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.sejin.website.dto.ApartmentDto;
+import com.sejin.website.dto.PhotoDto;
 
 @Repository
 public class ApartmentDaoImpl implements ApartmentDao {
@@ -33,5 +34,15 @@ public class ApartmentDaoImpl implements ApartmentDao {
 			sqlSession.close();
 		}
 	}
+
+	@Override
+  public List<PhotoDto> selectPhotoList() throws Exception {
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		try {
+			return sqlSession.selectList("com.sejin.website.dao.ApartmentDao.selectPhotoList");
+		} finally {
+			sqlSession.close();
+		}
+  }
 
 }

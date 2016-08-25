@@ -7,16 +7,16 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.sejin.website.service.HomeControllerService;
+import com.sejin.website.service.MainControllerService;
 
 
 @Controller
-public class HomeController {
+public class MainController {
 	@Autowired
-	HomeControllerService homeControllerService;
+	MainControllerService mainControllerService;
 	
 	
-  @RequestMapping("/home/list.do")
+  @RequestMapping("/main.do")
 	public String listAll(HttpServletRequest request, Model model) {
 		
 		String param = request.getParameter("buyType");
@@ -24,7 +24,7 @@ public class HomeController {
 			model.addAttribute("buyType", param);
 		}
 		
-		homeControllerService.execute(model);
-		return "home/list";
+		mainControllerService.execute(model);
+		return "main";
 	}
 }

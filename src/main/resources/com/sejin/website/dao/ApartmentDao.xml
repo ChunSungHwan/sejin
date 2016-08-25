@@ -37,7 +37,17 @@
 	  <result column="SHOE_RACK"        property="shoeRack"/>
 	  <result column="ALATITUDE"        property="alatitude"/>
 	  <result column="ALONGITUDE"        property="alongitude"/>
+	  
   </resultMap>
+  
+  
+  <resultMap type="PhotoDto" id="photoResultMap">
+    <id column="PNO" property="pno"/>
+    <result column="ANO" property="ano"/>
+    <result column="CNO" property="cno"/>
+    <result column="PHOTO_PATH" property="photoPath"/>
+  </resultMap>
+  
 
   <select id="selectList" resultMap="apartmentResultMap">
     select ANO, CNO, ANAME,TITLE, CONTENT, 
@@ -68,5 +78,10 @@
     where BUY_TYPE = #{string}
     order by MODIFY_DATE desc
   </select>    
+  
+  <select id="selectPhotoList" resultMap="photoResultMap">
+    select PNO, ANO, CNO, PHOTO_PATH
+    from PHOTOS
+  </select>
   
 </mapper>
