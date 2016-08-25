@@ -45,4 +45,35 @@ public class ApartmentDaoImpl implements ApartmentDao {
 		}
   }
 
+	@Override
+  public List<ApartmentDto> selectListCno(int cno) throws Exception {
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		try {
+			return sqlSession.selectList("com.sejin.website.dao.ApartmentDao.selectListCno",cno);
+		} finally {
+			sqlSession.close();
+		}
+	}
+
+	@Override
+  public List<PhotoDto> selectPhotoListCno(int cno) throws Exception {
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		try {
+			return sqlSession.selectList("com.sejin.website.dao.ApartmentDao.selectPhotoListCno",cno);
+		} finally {
+			sqlSession.close();
+		}
+	}
+
+	@Override
+  public List<ApartmentDto> selectListCnoBuyType(ApartmentDto apartmentDto)
+      throws Exception {
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		try {
+			return sqlSession.selectList("com.sejin.website.dao.ApartmentDao.selectListCnoBuyType", apartmentDto);
+		} finally {
+			sqlSession.close();
+		}
+  }
+
 }

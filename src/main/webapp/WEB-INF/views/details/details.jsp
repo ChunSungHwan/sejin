@@ -27,11 +27,11 @@
 <nav class="navbar navbar-default" style="margin-bottom: 0px">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">세진부동산</a>
+      <a class="navbar-brand" href="http://192.168.0.43:9999/website/main.do">세진부동산 02-568-3366</a>
     </div>
     <ul class="nav navbar-nav navbar-right">
       <li><a href="http://192.168.0.43:9999/website/main.do">Home</a></li>
-      <li><a href="http://192.168.0.43:9999/website/search/map.do">매물검색</a></li>
+      <li><a href="http://192.168.0.43:9999/website/search/search.do">매물검색</a></li>
       <li><a href="#">부동산소개</a></li>
       <li><a href="#">즐겨찾기</a></li>
     </ul>
@@ -259,22 +259,19 @@
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
+      <c:forEach var="photo" items="${complex.photos }" varStatus="status">
+        <c:if test="${status.index == 0 }">
+	        <div class="item active">
+	         <img src="http://192.168.0.43:9999${photo.photoPath }" alt="Sejin" width="460" height="345">
+	        </div>
+        </c:if>
+        <c:if test="${status.index != 0 }">
+          <div class="item">
+           <img src="http://192.168.0.43:9999${photo.photoPath }" alt="Sejin" width="460" height="345">
+          </div>
+        </c:if>
+      </c:forEach>
 
-      <div class="item active">
-        <img src="/imgFolder/skview1.jpg" alt="Chania" width="460" height="345">
-      </div>
-
-      <div class="item">
-        <img src="/imgFolder/skview2.jpg" alt="Chania" width="460" height="345">
-      </div>
-    
-      <div class="item">
-        <img src="/imgFolder/skview3.jpg" alt="Flower" width="460" height="345">
-      </div>
-
-      <div class="item">
-        <img src="/imgFolder/skview4.jpg" alt="Flower" width="460" height="345">
-      </div>
   
     </div>
 

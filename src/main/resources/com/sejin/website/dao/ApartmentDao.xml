@@ -64,6 +64,31 @@
   </select>
   
   
+  <select id="selectListCno" parameterType="int" resultMap="apartmentResultMap">
+    select ANO, CNO, ANAME,TITLE, CONTENT, 
+           BUY_TYPE, SALE_PRICE, RENT_DEPOSIT, MRENT_DEPOSIT, MRENT_PRICE, 
+           SUPPLY_AREA, EXCLUSIVE_AREA, 
+           BLOCK, TIER_TOTAL, TIER, DIRECTION, 
+           EXPECT_DATE, ENTRANCE_STRUCT, 
+           ROOM_NUMBER, BATH_NUMBER, LIVING_NUMBER, 
+           CREATE_DATE, MODIFY_DATE, 
+           BALCONY, WALLPAPER, BATHROOM, CEILING, FLOOR, 
+           KITCHEN, ENTRANCE, SHOE_RACK, ALATITUDE, ALONGITUDE 
+    from APARTMENTS
+    where CNO = #{cno}
+    order by MODIFY_DATE desc
+  </select>
+  
+  <select id="selectPhotoListCno" parameterType="int" resultMap="photoResultMap">
+    select PNO, ANO, CNO, PHOTO_PATH
+    from PHOTOS
+    where CNO = #{cno}
+  </select>
+  
+  
+  
+  
+  
   <select id="selectListBuyType" parameterType="string" resultMap="apartmentResultMap">
     select ANO, CNO, ANAME,TITLE, CONTENT, 
            BUY_TYPE, SALE_PRICE, RENT_DEPOSIT, MRENT_DEPOSIT, MRENT_PRICE, 
@@ -83,5 +108,23 @@
     select PNO, ANO, CNO, PHOTO_PATH
     from PHOTOS
   </select>
+  
+  
+  <select id="selectListCnoBuyType" parameterType="apartmentDto" resultMap="apartmentResultMap">
+    select ANO, CNO, ANAME,TITLE, CONTENT, 
+           BUY_TYPE, SALE_PRICE, RENT_DEPOSIT, MRENT_DEPOSIT, MRENT_PRICE, 
+           SUPPLY_AREA, EXCLUSIVE_AREA, 
+           BLOCK, TIER_TOTAL, TIER, DIRECTION, 
+           EXPECT_DATE, ENTRANCE_STRUCT, 
+           ROOM_NUMBER, BATH_NUMBER, LIVING_NUMBER, 
+           CREATE_DATE, MODIFY_DATE, 
+           BALCONY, WALLPAPER, BATHROOM, CEILING, FLOOR, 
+           KITCHEN, ENTRANCE, SHOE_RACK, ALATITUDE, ALONGITUDE 
+    from APARTMENTS
+    where CNO = #{cno} and BUY_TYPE = #{buyType}
+    order by MODIFY_DATE desc
+  </select>      
+  
+  
   
 </mapper>

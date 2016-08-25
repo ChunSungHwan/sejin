@@ -145,9 +145,10 @@
     where COMPLEXES.CNO = #{cno} and APARTMENTS.ANO = #{ano}
   </select>
   
-  <select id="selectPhotoList" resultMap="photoResultMap">
+  <select id="selectPhotoList" parameterType="ApartmentDto" resultMap="photoResultMap">
     select PNO, ANO, CNO, PHOTO_PATH
     from PHOTOS
+    where ANO = #{ano} and CNO = #{cno}
   </select>
   
 </mapper>

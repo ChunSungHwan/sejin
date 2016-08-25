@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 
 import com.sejin.website.dao.ComplexAptPhotoDao;
 import com.sejin.website.dto.ApartmentDto;
+import com.sejin.website.dto.ComplexApartmentPhotoDto;
 
 @Service
 public class DetailsControllerServiceImpl implements DetailsControllerService {
@@ -15,7 +16,9 @@ public class DetailsControllerServiceImpl implements DetailsControllerService {
 	@Override
 	public void execute(ApartmentDto aprtmentDto, Model model) {
 		try {
-	    model.addAttribute("complex", complexAptPhotoDao.selectOne(aprtmentDto));
+			ComplexApartmentPhotoDto complexAptPhotoDto = complexAptPhotoDao.selectOne(aprtmentDto);
+			complexAptPhotoDto.setPhotos(complexAptPhotoDao.selectPhotoList(aprtmentDto));
+	    model.addAttribute("complex", complexAptPhotoDto);
     } catch (Exception e) {
 	    e.printStackTrace();
     }

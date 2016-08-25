@@ -29,21 +29,17 @@ public class MainControllerServiceImpl implements MainControllerService {
 			Map<String, Object> map = model.asMap();
 			createJSONObj(model);
 			if(map.get("buyType") != null) {
-				model.addAttribute("list", apartmentDao.selectListBuyType((String) map.get("buyType")));
-			} else {
-				List<ApartmentDto> list = apartmentDao.selectList();
+				List<ApartmentDto> alist = apartmentDao.selectListBuyType((String) map.get("buyType"));
 				List<PhotoDto> plist = apartmentDao.selectPhotoList();
+				bindPhotoData(alist, plist);
 				
-				for(ApartmentDto a : list) {
-					a.setPhotos(new ArrayList<PhotoDto>());
-					for(PhotoDto p : plist) {
-						if(a.getAno() == p.getAno()) {
-							a.getPhotos().add(p);
-						}
-					}
-				}
+				model.addAttribute("list", alist);
+			} else {
+				List<ApartmentDto> alist = apartmentDao.selectList();
+				List<PhotoDto> plist = apartmentDao.selectPhotoList();
+				bindPhotoData(alist, plist);
 				
-				model.addAttribute("list", list);
+				model.addAttribute("list", alist);
 			}
 			
     } catch (Exception e) {
@@ -69,4 +65,16 @@ public class MainControllerServiceImpl implements MainControllerService {
 		model.addAttribute("mapOverays", jsonArray);
 	}
 
+  	
+ public void bindPhotoData(List<ApartmentDto> alist, List<PhotoDto> plist) {
+	 for(ApartmentDto a : alist) {
+			a.setPhotos(new ArrayList<PhotoDto>());
+			for(PhotoDto p : plist) {
+				if(a.getAno() == p.getAno()) {
+					a.getPhotos().add(p);
+				}
+			}
+		}
+ }
+  
 }

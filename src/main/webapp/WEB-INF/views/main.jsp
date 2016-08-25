@@ -22,7 +22,10 @@
 
 <style type="text/css">
 .customOverlay {background-color: #F8646E; border-radius:5px;}
-
+a:link { color: black; text-decoration: none;}
+a:visited { color: black; text-decoration: none;}
+a:hover { color: black; text-decoration: none;}
+a:active {color: black; text-decoration: none;}
 </style>
 
 
@@ -32,11 +35,11 @@
 <nav class="navbar navbar-default" style="margin-bottom: 0px">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">세진부동산</a>
+      <a class="navbar-brand" href="http://192.168.0.43:9999/website/main.do">세진부동산 02-568-3366</a>
     </div>
     <ul class="nav navbar-nav navbar-right">
       <li><a href="http://192.168.0.43:9999/website/main.do">Home</a></li>
-      <li><a href="http://192.168.0.43:9999/website/search/map.do">매물검색</a></li>
+      <li><a href="http://192.168.0.43:9999/website/search/search.do">매물검색</a></li>
       <li><a href="#">부동산소개</a></li>
       <li><a href="#">즐겨찾기</a></li>
     </ul>
@@ -63,7 +66,7 @@
        for(var i = 0; i < mapOverays.length; i++) {
     	   var customOverlay = new daum.maps.CustomOverlay({
     		      position: new daum.maps.LatLng(mapOverays[i].latitude, mapOverays[i].longitude),
-    		      content: "<div class='customOverlay'><a href='" + mapOverays[i].no + "'>" + mapOverays[i].name + "</a></div>"  
+    		      content: "<div class='customOverlay'><a href='http://192.168.0.43:9999/website/search/search.do?cno=" + mapOverays[i].no + "'>" + mapOverays[i].name + "</a></div>"  
     		 });
     	   customOverlay.setMap(map);
        }
@@ -90,7 +93,6 @@
 
 
 <hr>
-
 
 <div class="container-fluid">
   <div class="row">

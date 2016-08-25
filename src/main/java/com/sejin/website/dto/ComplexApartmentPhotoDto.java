@@ -1,6 +1,7 @@
 package com.sejin.website.dto;
 
 import java.sql.Date;
+import java.util.List;
 
 public class ComplexApartmentPhotoDto {
 	protected int ano;
@@ -56,7 +57,7 @@ public class ComplexApartmentPhotoDto {
 	
 	
 	protected int pno;
-	protected String photoPath;
+	protected List<PhotoDto> photos;
 	
 	public int getAno() {
 		return ano;
@@ -346,11 +347,12 @@ public class ComplexApartmentPhotoDto {
 	public void setPno(int pno) {
 		this.pno = pno;
 	}
-	public String getPhotoPath() {
-		return photoPath;
+	public List<PhotoDto> getPhotos() {
+		return photos;
 	}
-	public void setPhotoPath(String photoPath) {
-		this.photoPath = photoPath;
+	public void setPhotos(List<PhotoDto> photos) {
+		this.photos = photos;
 	}
+	
 	
 }
