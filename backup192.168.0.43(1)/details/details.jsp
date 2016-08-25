@@ -55,13 +55,13 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="http://121.169.132.202:8080/website/main.do">세진부동산 02-568-3366</a>
+      <a class="navbar-brand" href="http://192.168.0.43:9999/website/main.do">세진부동산 02-568-3366</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="http://121.169.132.202:8080/website/main.do">Home</a></li>
-      <li><a href="http://121.169.132.202:8080/website/search/search.do">매물검색</a></li>
-      <li><a href="http://121.169.132.202:8080/website/introduce/introduce.do">부동산소개</a></li>
+      <li><a href="http://192.168.0.43:9999/website/main.do">Home</a></li>
+      <li><a href="http://192.168.0.43:9999/website/search/search.do">매물검색</a></li>
+      <li><a href="http://192.168.0.43:9999/website/introduce/introduce.do">부동산소개</a></li>
       <!-- <li><a href="#">즐겨찾기</a></li> -->
     </ul>
     </div>
@@ -70,7 +70,7 @@
 
 
 <div class="container" id="map" style="height: 300px; margin-top: 10px"></div>
-<script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=a23a9dc8631da420adcd60d294014196"></script>
+<script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=ef077656f7ea38553b7e918751a598e6"></script>
 <script> 
     $(document).ready(function() {
       var container = document.getElementById('map');
@@ -102,7 +102,7 @@
 
 
 
-<div class="container col-xs-8 col-xs-offset-2">
+<div class="container">
   <h2>${complex.title }</h2>
   <table class="table table-bordered">
     <tbody>
@@ -115,7 +115,7 @@
         <c:choose>
           <c:when test="${complex.buyType ==  '매매'}">
             <th width="20%" style="background-color: #AAFA82">매매가</th>
-            <td width="80%" colspan="5">${complex.salePrice }만원</td>
+		        <td width="80%" colspan="5">${complex.salePrice }만원</td>
           </c:when>
           <c:when test="${complex.buyType ==  '전세'}">
             <th width="20%" style="background-color: #AAFA82">전세보증금</th>
@@ -123,9 +123,9 @@
           </c:when>
           <c:otherwise>
             <th width="20%" style="background-color: #AAFA82">월세보증금</th>
-            <td width="30%" colspan="2">${complex.mRentDeposit }만원</td>
-            <th width="20%" style="background-color: #AAFA82">월세</th>
-            <td width="30%" colspan="2">${complex.mRentPrice }만원</td>
+		        <td width="30%" colspan="2">${complex.mRentDeposit }만원</td>
+		        <th width="20%" style="background-color: #AAFA82">월세</th>
+		        <td width="30%" colspan="2">${complex.mRentPrice }만원</td>
           </c:otherwise>
         </c:choose>
       </tr>
@@ -215,7 +215,7 @@
         <th width="25%" style="background-color: #AAFA82">발코니</th>
         <c:choose>
           <c:when test="${complex.balcony == true }">
-            <td width="25%">O</td>
+		        <td width="25%">O</td>
           </c:when>
           <c:otherwise>
             <td width="25%">X</td>
@@ -303,31 +303,32 @@
 
 
 
-<div class="container col-xs-8 col-xs-offset-2">
+<div class="container">
   <br>
   <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
     <!-- Indicators -->
     <ol class="carousel-indicators">
       <c:forEach var="photo" items="${complex.photos }" varStatus="status">
         <c:if test="${status.index == 0 }">
-          <li data-target="#myCarousel" data-slide-to="${status.index}" class="active"></li>
+		      <li data-target="#myCarousel" data-slide-to="${status.index}" class="active"></li>
         </c:if>
         <c:if test="${status.index != 0 }">
-          <li data-target="#myCarousel" data-slide-to="${status.index}"></li>
+		      <li data-target="#myCarousel" data-slide-to="${status.index}"></li>
         </c:if>
       </c:forEach>
     </ol>
 
+    <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <c:forEach var="photo" items="${complex.photos }" varStatus="status">
         <c:if test="${status.index == 0 }">
-          <div class="item active">
-           <img src="http://121.169.132.202:8080${photo.photoPath }" alt="Sejin" width="460" height="345">
-          </div>
+	        <div class="item active">
+	         <img src="http://192.168.0.43:9999${photo.photoPath }" alt="Sejin" width="460" height="345">
+	        </div>
         </c:if>
         <c:if test="${status.index != 0 }">
           <div class="item">
-           <img src="http://121.169.132.202:8080${photo.photoPath }" alt="Sejin" width="460" height="345">
+           <img src="http://192.168.0.43:9999${photo.photoPath }" alt="Sejin" width="460" height="345">
           </div>
         </c:if>
       </c:forEach>
@@ -335,6 +336,7 @@
   
     </div>
 
+    <!-- Left and right controls -->
     <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
       <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
       <span class="sr-only">Previous</span>
@@ -347,11 +349,11 @@
 </div>
 
 
-
-<footer class="container col-xs-12">
-  <hr>
+<hr>
+<footer class="container-fluid">
   <p style="text-align: center;">&copy; 세진부동산 서울특별시 강남구 역삼동 716-1 개나리아파트5차 상가 104호 세진부동산 02-556-3366</p>
 </footer>
+
 
 
 </body>

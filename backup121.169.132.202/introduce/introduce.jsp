@@ -110,13 +110,6 @@
 </div>
 
 
-<hr>
-<footer class="container-fluid">
-  <p style="text-align: center;">&copy; 세진부동산    서울특별시 강남구 역삼동 716-1 개나리아파트5차 상가 104호 세진부동산 02-556-3366</p>
-</footer>
-
-
-
 
 </body>
 </html>

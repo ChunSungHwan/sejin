@@ -305,6 +305,10 @@ VALUES (2,'동부센트레빌','확장. 베란다 전망 좋은 조용한 집입
 ,'계단식',3,2,0,NOW(),NOW(),false,true,false,true,true,true,false,true,'37.502437', '127.049243');
 INSERT INTO PHOTOS(ANO,CNO,PHOTO_PATH)
 VALUES (7,2,'/imgFolder/dongboo/dongboo1.jpg');
+INSERT INTO PHOTOS(ANO,CNO,PHOTO_PATH)
+VALUES (7,2,'/imgFolder/dongboo/dongboo7.jpg');
+INSERT INTO PHOTOS(ANO,CNO,PHOTO_PATH)
+VALUES (7,2,'/imgFolder/dongboo/dongboo8.jpg');
 
 
 
@@ -315,7 +319,13 @@ INSERT INTO APARTMENTS(CNO,ANAME,TITLE,CONTENT,BUY_TYPE,SALE_PRICE,RENT_DEPOSIT,
 VALUES (2,'동부센트레빌','확장 옵션, 로얄층 전망 좋은 저렴한 월세','도성초 진선여중고 학군입니다. 선릉 역세권으로 교통이 편리한단지.','월세',0,0,4000,350,'112.96','84.99',102,20,12,'남향','즉시입주'
 ,'계단식',3,2,0,NOW(),NOW(),false,true,false,true,true,true,false,true,'37.502437', '127.049243');
 INSERT INTO PHOTOS(ANO,CNO,PHOTO_PATH)
-VALUES (8,2,'/imgFolder/dongboo/dongboo5.jpg');
+VALUES (8,2,'/imgFolder/dongboo/dongboo10.jpg');
+INSERT INTO PHOTOS(ANO,CNO,PHOTO_PATH)
+VALUES (8,2,'/imgFolder/dongboo/dongboo11.jpg');
+INSERT INTO PHOTOS(ANO,CNO,PHOTO_PATH)
+VALUES (8,2,'/imgFolder/dongboo/dongboo12.jpg');
+INSERT INTO PHOTOS(ANO,CNO,PHOTO_PATH)
+VALUES (8,2,'/imgFolder/dongboo/dongboo13.jpg');
 
 
 INSERT INTO APARTMENTS(CNO,ANAME,TITLE,CONTENT,BUY_TYPE,SALE_PRICE,RENT_DEPOSIT,MRENT_DEPOSIT,MRENT_PRICE

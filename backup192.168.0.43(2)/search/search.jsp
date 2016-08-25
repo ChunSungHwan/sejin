@@ -43,13 +43,13 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="http://121.169.132.202:8080/website/main.do">세진부동산 02-568-3366</a>
+      <a class="navbar-brand" href="http://192.168.0.43:9999/website/main.do">세진부동산 02-568-3366</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="http://121.169.132.202:8080/website/main.do">Home</a></li>
-      <li><a href="http://121.169.132.202:8080/website/search/search.do">매물검색</a></li>
-      <li><a href="http://121.169.132.202:8080/website/introduce/introduce.do">부동산소개</a></li>
+      <li><a href="http://192.168.0.43:9999/website/main.do">Home</a></li>
+      <li><a href="http://192.168.0.43:9999/website/search/search.do">매물검색</a></li>
+      <li><a href="http://192.168.0.43:9999/website/introduce/introduce.do">부동산소개</a></li>
       <!-- <li><a href="#">즐겨찾기</a></li> -->
     </ul>
     </div>
@@ -58,7 +58,7 @@
 
 
 <div class="container" style="margin-top: 20px">
-  <form class="form-inline" method="post" action="http://121.169.132.202:8080/website/search/search.do">
+  <form class="form-inline" method="post" action="http://192.168.0.43:9999/website/search/search.do">
     <div class="form-group" style="margin-right: 10px">
       <label for="email">거래구분 : </label>
       <select class="form-control" name="buyType">
@@ -100,9 +100,9 @@
   <div class="row">
     <div class="col-xs-8 col-xs-offset-2">
       <c:forEach var="apartments" items="${alist}">
-        <div class="col-xs-4" onclick="location.href='http://121.169.132.202:8080/website/search/details.do?ano=${apartments.ano}&cno=${apartments.cno }'">
+        <div class="col-xs-4" onclick="location.href='http://192.168.0.43:9999/website/search/details.do?ano=${apartments.ano}&cno=${apartments.cno }'">
           <div class="thumbnail">
-            <img src="http://121.169.132.202:8080${apartments.photos[0].photoPath}" alt="..." style="min-height:200px;height:200px;width: 300px">
+            <img src="http://192.168.0.43:9999${apartments.photos[0].photoPath}" alt="..." style="min-height:200px;height:200px;width: 300px">
             <div class="caption">
               <h4>${apartments.aname }</h4>
                              <c:choose>
@@ -131,8 +131,10 @@
 
 <hr>
 <footer class="container-fluid">
-  <p style="text-align: center;">&copy; 세진부동산    서울특별시 강남구 역삼동 716-1 개나리아파트5차 상가 104호 세진부동산 02-556-3366</p>
+  <p style="text-align: center;">&copy; 세진부동산 서울특별시 강남구 역삼동 716-1 개나리아파트5차 상가 104호 세진부동산 02-556-3366</p>
 </footer>
+
+
 
 </body>
 </html>

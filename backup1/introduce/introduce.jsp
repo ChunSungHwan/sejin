@@ -48,13 +48,13 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="http://121.169.132.202:8080/website/main.do">세진부동산 02-568-3366</a>
+      <a class="navbar-brand" href="http://192.168.0.43:9999/website/main.do">세진부동산 02-568-3366</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="http://121.169.132.202:8080/website/main.do">Home</a></li>
-      <li><a href="http://121.169.132.202:8080/website/search/search.do">매물검색</a></li>
-      <li><a href="http://121.169.132.202:8080/website/introduce/introduce.do">부동산소개</a></li>
+      <li><a href="http://192.168.0.43:9999/website/main.do">Home</a></li>
+      <li><a href="http://192.168.0.43:9999/website/search/search.do">매물검색</a></li>
+      <li><a href="http://192.168.0.43:9999/website/introduce/introduce.do">부동산소개</a></li>
       <!-- <li><a href="#">즐겨찾기</a></li> -->
     </ul>
     </div>
@@ -63,7 +63,7 @@
 
 
 <div class="container" id="map" style="height: 600px; margin-top: 20px"></div>
-<script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=a23a9dc8631da420adcd60d294014196"></script>
+<script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=ef077656f7ea38553b7e918751a598e6"></script>
 <script> 
     $(document).ready(function() {
       var container = document.getElementById('map');
@@ -105,16 +105,9 @@
   <br><br>저희 세진공인중개사사무소는 역삼동 아파트관련
   <br> 물건을 주로 취급하고 있는 전문 공인중개사 사무소입니다.
   <br><br>내가 살 집을 고르듯 고객 여러분 한분 한분께 가장 적합한 집을 소개하도록 노력하겠습니다.
-  <br>부동산 임직원 모두가 고객입장이라 생각하고 중개한다는 마음으로 최선을 다하겠습니다.
+  <br><br>부동산 임직원 모두가 고객입장이라 생각하고 중개한다는 마음으로 최선을 다하겠습니다.
   <br><br>감사합니다.</p>
 </div>
-
-
-<hr>
-<footer class="container-fluid">
-  <p style="text-align: center;">&copy; 세진부동산    서울특별시 강남구 역삼동 716-1 개나리아파트5차 상가 104호 세진부동산 02-556-3366</p>
-</footer>
-
 
 
 

@@ -102,7 +102,7 @@
 
 
 
-<div class="container col-xs-8 col-xs-offset-2">
+<div class="container">
   <h2>${complex.title }</h2>
   <table class="table table-bordered">
     <tbody>
@@ -115,7 +115,7 @@
         <c:choose>
           <c:when test="${complex.buyType ==  '매매'}">
             <th width="20%" style="background-color: #AAFA82">매매가</th>
-            <td width="80%" colspan="5">${complex.salePrice }만원</td>
+		        <td width="80%" colspan="5">${complex.salePrice }만원</td>
           </c:when>
           <c:when test="${complex.buyType ==  '전세'}">
             <th width="20%" style="background-color: #AAFA82">전세보증금</th>
@@ -123,9 +123,9 @@
           </c:when>
           <c:otherwise>
             <th width="20%" style="background-color: #AAFA82">월세보증금</th>
-            <td width="30%" colspan="2">${complex.mRentDeposit }만원</td>
-            <th width="20%" style="background-color: #AAFA82">월세</th>
-            <td width="30%" colspan="2">${complex.mRentPrice }만원</td>
+		        <td width="30%" colspan="2">${complex.mRentDeposit }만원</td>
+		        <th width="20%" style="background-color: #AAFA82">월세</th>
+		        <td width="30%" colspan="2">${complex.mRentPrice }만원</td>
           </c:otherwise>
         </c:choose>
       </tr>
@@ -215,7 +215,7 @@
         <th width="25%" style="background-color: #AAFA82">발코니</th>
         <c:choose>
           <c:when test="${complex.balcony == true }">
-            <td width="25%">O</td>
+		        <td width="25%">O</td>
           </c:when>
           <c:otherwise>
             <td width="25%">X</td>
@@ -303,27 +303,28 @@
 
 
 
-<div class="container col-xs-8 col-xs-offset-2">
+<div class="container">
   <br>
   <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
     <!-- Indicators -->
     <ol class="carousel-indicators">
       <c:forEach var="photo" items="${complex.photos }" varStatus="status">
         <c:if test="${status.index == 0 }">
-          <li data-target="#myCarousel" data-slide-to="${status.index}" class="active"></li>
+		      <li data-target="#myCarousel" data-slide-to="${status.index}" class="active"></li>
         </c:if>
         <c:if test="${status.index != 0 }">
-          <li data-target="#myCarousel" data-slide-to="${status.index}"></li>
+		      <li data-target="#myCarousel" data-slide-to="${status.index}"></li>
         </c:if>
       </c:forEach>
     </ol>
 
+    <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <c:forEach var="photo" items="${complex.photos }" varStatus="status">
         <c:if test="${status.index == 0 }">
-          <div class="item active">
-           <img src="http://121.169.132.202:8080${photo.photoPath }" alt="Sejin" width="460" height="345">
-          </div>
+	        <div class="item active">
+	         <img src="http://121.169.132.202:8080${photo.photoPath }" alt="Sejin" width="460" height="345">
+	        </div>
         </c:if>
         <c:if test="${status.index != 0 }">
           <div class="item">
@@ -335,6 +336,7 @@
   
     </div>
 
+    <!-- Left and right controls -->
     <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
       <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
       <span class="sr-only">Previous</span>
@@ -345,13 +347,6 @@
     </a>
   </div>
 </div>
-
-
-
-<footer class="container col-xs-12">
-  <hr>
-  <p style="text-align: center;">&copy; 세진부동산 서울특별시 강남구 역삼동 716-1 개나리아파트5차 상가 104호 세진부동산 02-556-3366</p>
-</footer>
 
 
 </body>
