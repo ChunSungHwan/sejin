@@ -67,7 +67,7 @@ a:active {color: black; text-decoration: none;}
 </nav>
 
 
-<div class="container-fluid" id="map" style="height: 400px;"></div>
+<div class="container-fluid" id="map" style="height: 500px;"></div>
 <script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=a23a9dc8631da420adcd60d294014196"></script>
 <script> 
     $(document).ready(function() {
