@@ -56,19 +56,18 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="http://121.169.132.202:8080/website/main.do">세진부동산 02-568-3366</a>
+      <a class="navbar-brand" href="http://192.168.0.43:9999/website/main.do">세진부동산 02-568-3366</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="http://121.169.132.202:8080/website/main.do">Home</a></li>
-      <li><a href="http://121.169.132.202:8080/website/search/search.do">매물검색</a></li>
-      <li><a href="http://121.169.132.202:8080/website/introduce/introduce.do">부동산소개</a></li>
+      <li><a href="http://192.168.0.43:9999/website/main.do">Home</a></li>
+      <li><a href="http://192.168.0.43:9999/website/search/search.do">매물검색</a></li>
+      <li><a href="http://192.168.0.43:9999/website/introduce/introduce.do">부동산소개</a></li>
       <!-- <li><a href="#">즐겨찾기</a></li> -->
     </ul>
     </div>
   </div>
 </nav>
-
 
 <div class="container">
   <h2>${complex.title }</h2>
@@ -291,12 +290,12 @@
       <c:forEach var="photo" items="${complex.photos }" varStatus="status">
         <c:if test="${status.index == 0 }">
 	        <div class="item active">
-	         <img src="http://121.169.132.202:8080${photo.photoPath }" alt="Sejin" width="460" height="345">
+	         <img src="http://192.168.0.43:9999${photo.photoPath }" alt="Sejin" width="460" height="345">
 	        </div>
         </c:if>
         <c:if test="${status.index != 0 }">
           <div class="item">
-           <img src="http://121.169.132.202:8080${photo.photoPath }" alt="Sejin" width="460" height="345">
+           <img src="http://192.168.0.43:9999${photo.photoPath }" alt="Sejin" width="460" height="345">
           </div>
         </c:if>
       </c:forEach>
@@ -319,3 +318,134 @@
 
 </body>
 </html>
+
+<!-- 
+<div class="container">
+  <h2>제목</h2>
+  <table class="table table-bordered">
+    <tbody>
+      <tr>
+        <th width="20%">거래종류</th>
+        <td width="80%" colspan="5">매매</td>
+      </tr>
+    
+      <tr>
+        <th width="20%">매매가</th>
+        <td width="80%" colspan="5">10억</td>
+      </tr>
+      
+      <tr>
+        <th width="20%">공급면적</th>
+        <td width="30%" colspan="2">100제곱</td>
+        <th width="20%">전용면적</th>
+        <td width="30%" colspan="2">200제곱</td>
+      </tr>
+     
+      <tr>
+        <th width="14%">동</th>
+        <td width="20%">501</td>
+        <th width="13%">층</th>
+        <td width="20%">501</td>
+        <th width="13%">방향</th>
+        <td width="20%">남향</td>
+      </tr>
+      
+      <tr>
+        <th width="14%">방</th>
+        <td width="20%">4</td>
+        <th width="13%">욕실</th>
+        <td width="20%">2</td>
+        <th width="13%">거실</th>
+        <td width="20%">0</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <table class="table table-bordered">
+    <tbody>
+      <tr>
+        <th width="20%">주소</th>
+        <td width="80%" colspan="5">서울특별시 강남구 역삼동</td>
+      </tr>
+    
+      <tr>
+        <th width="14%">총동수</th>
+        <td width="20%">3</td>
+        <th width="13%">총세대수</th>
+        <td width="20%">501</td>
+        <th width="13%">총주차대수</th>
+        <td width="20%">620</td>
+      </tr>
+      
+      <tr>
+        <th width="20%">최고층</th>
+        <td width="30%" colspan="2">25</td>
+        <th width="20%">최저층</th>
+        <td width="30%" colspan="2">20</td>
+      </tr>
+     
+     
+     <tr>
+        <th width="20%">난방방식</th>
+        <td width="30%" colspan="2">중앙난방</td>
+        <th width="20%">난방연료</th>
+        <td width="30%" colspan="2">도시가스</td>
+      </tr>
+     
+     <tr>
+        <th width="20%">건설사명</th>
+        <td width="30%" colspan="2">SK건설회사</td>
+        <th width="20%">용적률</th>
+        <td width="30%" colspan="2">200%</td>
+      </tr>
+     
+      <tr>
+        <th width="20%">입주년일</th>
+        <td width="30%" colspan="2">2010년 2월 25일</td>
+        <th width="20%">준공년일</th>
+        <td width="30%" colspan="2">2013년 3월 23일</td>
+      </tr>
+      
+    </tbody>
+  </table>
+  
+  
+  
+  
+    <table class="table table-bordered">
+    <tbody>
+      <tr>
+        <th width="25%">발코니</th>
+        <td width="25%">O</td>
+        <th width="25%">벽지</th>
+        <td width="25%">O</td>
+      </tr>
+      
+      <tr>
+        <th width="25%">화장실</th>
+        <td width="25%">O</td>
+        <th width="25%">천장</th>
+        <td width="25%">O</td>
+      </tr>
+      
+      <tr>
+        <th width="25%">마루</th>
+        <td width="25%">O</td>
+        <th width="25%">부엌</th>
+        <td width="25%">O</td>
+      </tr>
+      
+      <tr>
+        <th width="25%">전실</th>
+        <td width="25%">O</td>
+        <th width="25%">신발장</th>
+        <td width="25%">O</td>
+      </tr>
+     
+      
+    </tbody>
+  </table>
+  
+  
+</div> -->

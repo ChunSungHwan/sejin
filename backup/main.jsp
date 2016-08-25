@@ -63,13 +63,13 @@ a:active {color: black; text-decoration: none;}
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="http://121.169.132.202:8080/website/main.do">세진부동산 02-568-3366</a>
+      <a class="navbar-brand" href="http://192.168.0.43:9999/website/main.do">세진부동산 02-568-3366</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="http://121.169.132.202:8080/website/main.do">Home</a></li>
-      <li><a href="http://121.169.132.202:8080/website/search/search.do">매물검색</a></li>
-      <li><a href="http://121.169.132.202:8080/website/introduce/introduce.do">부동산소개</a></li>
+      <li><a href="http://192.168.0.43:9999/website/main.do">Home</a></li>
+      <li><a href="http://192.168.0.43:9999/website/search/search.do">매물검색</a></li>
+      <li><a href="http://192.168.0.43:9999/website/introduce/introduce.do">부동산소개</a></li>
       <!-- <li><a href="#">즐겨찾기</a></li> -->
     </ul>
     </div>
@@ -112,10 +112,10 @@ a:active {color: black; text-decoration: none;}
   <div class="row">
     <div class="col-xs-4 col-xs-offset-5">
 	    <div class="btn-group" role="group" aria-label="...">
-	      <button type="button" class="btn btn-default" onclick="location.href='http://121.169.132.202:8080/website/main.do'">전체</button>
-	      <button type="button" class="btn btn-default" onclick="location.href='http://121.169.132.202:8080/website/main.do?buyType=매매'">매매</button>
-	      <button type="button" class="btn btn-default" onclick="location.href='http://121.169.132.202:8080/website/main.do?buyType=전세'">전세</button>
-	      <button type="button" class="btn btn-default" onclick="location.href='http://121.169.132.202:8080/website/main.do?buyType=월세'">월세</button>
+	      <button type="button" class="btn btn-default" onclick="location.href='http://192.168.0.43:9999/website/main.do'">전체</button>
+	      <button type="button" class="btn btn-default" onclick="location.href='http://192.168.0.43:9999/website/main.do?buyType=매매'">매매</button>
+	      <button type="button" class="btn btn-default" onclick="location.href='http://192.168.0.43:9999/website/main.do?buyType=전세'">전세</button>
+	      <button type="button" class="btn btn-default" onclick="location.href='http://192.168.0.43:9999/website/main.do?buyType=월세'">월세</button>
 	    </div>
     </div>
   </div>  
@@ -128,9 +128,9 @@ a:active {color: black; text-decoration: none;}
   <div class="row">
     <div class="col-xs-8 col-xs-offset-2">
 	    <c:forEach var="apartments" items="${list}">
-		    <div class="col-xs-3" onclick="location.href='http://121.169.132.202:8080/website/search/details.do?ano=${apartments.ano}&cno=${apartments.cno }'">
+		    <div class="col-xs-3" onclick="location.href='http://192.168.0.43:9999/website/search/details.do?ano=${apartments.ano}&cno=${apartments.cno }'">
 		      <div class="thumbnail">
-		        <img src="http://121.169.132.202:8080${apartments.photos[0].photoPath}" alt="..." style="min-height:200px;height:200px;width: 300px">
+		        <img src="http://192.168.0.43:9999${apartments.photos[0].photoPath}" alt="..." style="min-height:200px;height:200px;width: 300px">
 		        <div class="caption">
 		          <h4>${apartments.aname }</h4>
 		          <%-- <p>${apartments.buyType } ${apartments.buyType =='매매'? apartments.salePrice: apartments.buyType=='전세'?apartments.rentDeposit : apartments.mRentDeposit}만원 ${apartments.buyType =='월세'? '/' : ' '} ${apartments.buyType =='월세'? apartments.mRentPrice : ' '}${apartments.buyType =='월세'? '만원' : ' '}</p> --%>
